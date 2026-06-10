@@ -1,0 +1,4 @@
+DROP ROLE IF EXISTS rag_readonly;
+DROP TABLE IF EXISTS chunks;
+DROP TABLE IF EXISTS documents;
+DROP TABLE IF EXISTS transactions;
