@@ -1,0 +1,250 @@
+{
+  "timestamp": "2026-06-18T11:48:08.402519+00:00",
+  "summary": {
+    "1": 0.9333333333333333,
+    "3": 1.0,
+    "5": 1.0
+  },
+  "cases": [
+    {
+      "query": "what is reentrancy and how do you prevent it",
+      "expected_source": "manual_test",
+      "retrieved_sources": [
+        "manual_test",
+        "mev_frontrunning",
+        "flash_loans",
+        "erc20",
+        "oracle_manipulation"
+      ],
+      "hits": {
+        "1": true,
+        "3": true,
+        "5": true
+      }
+    },
+    {
+      "query": "how does the checks-effects-interactions pattern stop attacks",
+      "expected_source": "manual_test",
+      "retrieved_sources": [
+        "oracle_manipulation",
+        "erc20",
+        "manual_test",
+        "mev_frontrunning",
+        "flash_loans"
+      ],
+      "hits": {
+        "1": false,
+        "3": true,
+        "5": true
+      }
+    },
+    {
+      "query": "explain how a flash loan works",
+      "expected_source": "flash_loans",
+      "retrieved_sources": [
+        "flash_loans",
+        "mev_frontrunning",
+        "oracle_manipulation",
+        "erc20",
+        "gas_optimization"
+      ],
+      "hits": {
+        "1": true,
+        "3": true,
+        "5": true
+      }
+    },
+    {
+      "query": "why do flash loans not need collateral",
+      "expected_source": "flash_loans",
+      "retrieved_sources": [
+        "flash_loans",
+        "mev_frontrunning",
+        "oracle_manipulation",
+        "gas_optimization",
+        "erc20"
+      ],
+      "hits": {
+        "1": true,
+        "3": true,
+        "5": true
+      }
+    },
+    {
+      "query": "how to reduce gas costs when writing solidity",
+      "expected_source": "gas_optimization",
+      "retrieved_sources": [
+        "gas_optimization",
+        "mev_frontrunning",
+        "erc20",
+        "oracle_manipulation",
+        "flash_loans"
+      ],
+      "hits": {
+        "1": true,
+        "3": true,
+        "5": true
+      }
+    },
+    {
+      "query": "why is SSTORE so expensive compared to memory operations",
+      "expected_source": "gas_optimization",
+      "retrieved_sources": [
+        "gas_optimization",
+        "oracle_manipulation",
+        "mev_frontrunning",
+        "erc20",
+        "manual_test"
+      ],
+      "hits": {
+        "1": true,
+        "3": true,
+        "5": true
+      }
+    },
+    {
+      "query": "what functions does the ERC-20 token standard require",
+      "expected_source": "erc20",
+      "retrieved_sources": [
+        "erc20",
+        "manual_test",
+        "gas_optimization",
+        "mev_frontrunning",
+        "oracle_manipulation"
+      ],
+      "hits": {
+        "1": true,
+        "3": true,
+        "5": true
+      }
+    },
+    {
+      "query": "what is the approve transferFrom race condition",
+      "expected_source": "erc20",
+      "retrieved_sources": [
+        "erc20",
+        "flash_loans",
+        "mev_frontrunning",
+        "manual_test",
+        "oracle_manipulation"
+      ],
+      "hits": {
+        "1": true,
+        "3": true,
+        "5": true
+      }
+    },
+    {
+      "query": "how can an attacker manipulate a price oracle",
+      "expected_source": "oracle_manipulation",
+      "retrieved_sources": [
+        "oracle_manipulation",
+        "mev_frontrunning",
+        "flash_loans",
+        "manual_test",
+        "gas_optimization"
+      ],
+      "hits": {
+        "1": true,
+        "3": true,
+        "5": true
+      }
+    },
+    {
+      "query": "why is using spot price from a single DEX pool risky",
+      "expected_source": "oracle_manipulation",
+      "retrieved_sources": [
+        "oracle_manipulation",
+        "flash_loans",
+        "mev_frontrunning",
+        "gas_optimization",
+        "erc20"
+      ],
+      "hits": {
+        "1": true,
+        "3": true,
+        "5": true
+      }
+    },
+    {
+      "query": "what is a sandwich attack",
+      "expected_source": "mev_frontrunning",
+      "retrieved_sources": [
+        "mev_frontrunning",
+        "oracle_manipulation",
+        "flash_loans",
+        "manual_test",
+        "erc20"
+      ],
+      "hits": {
+        "1": true,
+        "3": true,
+        "5": true
+      }
+    },
+    {
+      "query": "how do searchers extract MEV from the mempool",
+      "expected_source": "mev_frontrunning",
+      "retrieved_sources": [
+        "mev_frontrunning",
+        "gas_optimization",
+        "oracle_manipulation",
+        "manual_test",
+        "erc20"
+      ],
+      "hits": {
+        "1": true,
+        "3": true,
+        "5": true
+      }
+    },
+    {
+      "query": "flash loan attack used to manipulate price in one transaction",
+      "expected_source": "flash_loans",
+      "retrieved_sources": [
+        "flash_loans",
+        "oracle_manipulation",
+        "mev_frontrunning",
+        "manual_test",
+        "erc20"
+      ],
+      "hits": {
+        "1": true,
+        "3": true,
+        "5": true
+      }
+    },
+    {
+      "query": "how does TWAP protect against oracle manipulation",
+      "expected_source": "oracle_manipulation",
+      "retrieved_sources": [
+        "oracle_manipulation",
+        "flash_loans",
+        "manual_test",
+        "mev_frontrunning",
+        "gas_optimization"
+      ],
+      "hits": {
+        "1": true,
+        "3": true,
+        "5": true
+      }
+    },
+    {
+      "query": "what is the difference between calldata and memory for gas costs",
+      "expected_source": "gas_optimization",
+      "retrieved_sources": [
+        "gas_optimization",
+        "mev_frontrunning",
+        "oracle_manipulation",
+        "erc20",
+        "manual_test"
+      ],
+      "hits": {
+        "1": true,
+        "3": true,
+        "5": true
+      }
+    }
+  ]
+}

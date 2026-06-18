@@ -1,0 +1,17 @@
+[
+  {"query": "what is reentrancy and how do you prevent it", "expected_source": "manual_test"},
+  {"query": "how does the checks-effects-interactions pattern stop attacks", "expected_source": "manual_test"},
+  {"query": "explain how a flash loan works", "expected_source": "flash_loans"},
+  {"query": "why do flash loans not need collateral", "expected_source": "flash_loans"},
+  {"query": "how to reduce gas costs when writing solidity", "expected_source": "gas_optimization"},
+  {"query": "why is SSTORE so expensive compared to memory operations", "expected_source": "gas_optimization"},
+  {"query": "what functions does the ERC-20 token standard require", "expected_source": "erc20"},
+  {"query": "what is the approve transferFrom race condition", "expected_source": "erc20"},
+  {"query": "how can an attacker manipulate a price oracle", "expected_source": "oracle_manipulation"},
+  {"query": "why is using spot price from a single DEX pool risky", "expected_source": "oracle_manipulation"},
+  {"query": "what is a sandwich attack", "expected_source": "mev_frontrunning"},
+  {"query": "how do searchers extract MEV from the mempool", "expected_source": "mev_frontrunning"},
+  {"query": "flash loan attack used to manipulate price in one transaction", "expected_source": "flash_loans"},
+  {"query": "how does TWAP protect against oracle manipulation", "expected_source": "oracle_manipulation"},
+  {"query": "what is the difference between calldata and memory for gas costs", "expected_source": "gas_optimization"}
+]

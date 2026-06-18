@@ -1,4 +1,4 @@
-from sentence_transformer import SentenceTransformer
+from sentence_transformers import SentenceTransformer
 
 class BGEEmbedder:
     def __init__(self, model_name: str = "BAAI/bge-base-en-v1.5"):
