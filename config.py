@@ -3,6 +3,7 @@ from pydantic_settings import BaseSettings
 
 class Settings(BaseSettings):
     postgres_url: str = "postgresql://rag:yeet2178@localhost:5432/bc_rag"
+    postgres_readonly_url: str = "postgresql://rag_readonly:yeet2178@localhost:5432/bc_rag"
     chroma_path: str = "./data/chroma"
     anthropic_api_key: str = ""
     openrouter_api_key: str = ""
