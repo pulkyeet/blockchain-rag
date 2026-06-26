@@ -34,7 +34,7 @@ class GraphQueryTool(Tool):
             base_url=settings.openrouter_base_url, api_key=settings.openrouter_api_key
         )
 
-    def _generate_cyper(self, question: str) -> str:
+    def _generate_cypher(self, question: str) -> str:
         response = self.llm.chat.completions.create(
             model="openai/gpt-oss-120b:free",
             messages=[
@@ -51,7 +51,7 @@ class GraphQueryTool(Tool):
         question = input.get("question", "")
 
         try:
-            raw_cypher = self._generate_cyper(question)
+            raw_cypher = self._generate_cypher(question)
 
             if raw_cypher.strip() == NO_QUERY_POSSIBLE:
                 return ToolResult(

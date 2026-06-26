@@ -14,9 +14,6 @@ from services.tools.graph_query import GraphQueryTool
 
 class GraphRetriever(Retriever):
     def __init__(self):
-        self.driver = GraphDatabase.driver(
-            settings.neo4j_uri, auth=(settings.neo4j_user, settings.neo4j_password)
-        )
         self.tool = GraphQueryTool()
 
     def retrieve(self, query: str, top_k: int = 5) -> RetrievalResult:

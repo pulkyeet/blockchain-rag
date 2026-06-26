@@ -33,7 +33,7 @@ def load_addresses(pg_conn, neo4j_driver):
                 print(f"[addresses] loaded {min(i + BATCH_SIZE, len(rows))}/{len(rows)}")
 
 def load_transactions(pg_conn, neo4j_driver):
-    # Pass 2: txns -> tnx edges (if contract, to_address would be NULL; we can skip them)
+    # Pass 2: txns -> tnx edges (if to_address = NULL, it is for contract creation; we can skip them)
     with pg_conn.cursor() as cur:
         cur.execute("""
 SELECT hash, from_address, to_address, value_eth, gas_used, block_timestamp
