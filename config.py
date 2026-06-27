@@ -9,6 +9,7 @@ class Settings(BaseSettings):
     neo4j_user: str = "neo4j"
     neo4j_password: str = "yeet2178"
     anthropic_api_key: str = ""
+    google_api_key: str = ""
     openrouter_api_key: str = ""
     openrouter_base_url: str = "https://openrouter.ai/api/v1"
     embedding_model: str = "BAAI/bge-base-en-v1.5"

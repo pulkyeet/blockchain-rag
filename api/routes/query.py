@@ -6,6 +6,7 @@ from pydantic import BaseModel
 from api.deps import get_retriever
 from services.retrieval.chroma_retriever import ChromaRetriever
 from config import settings
+from google import genai
 
 router = APIRouter()
 
@@ -32,23 +33,14 @@ def query(req: QueryRequest, retriever: ChromaRetriever = Depends(get_retriever)
     def generate():
         yield f"data: {json.dumps({'type': 'chunks', 'chunks': [c.model_dump() for c in result.chunks]})}\n\n"
 
-        client = OpenAI(api_key=settings.openrouter_api_key, base_url=settings.openrouter_base_url)
-        stream = client.chat.completions.create(
-            model="openai/gpt-oss-120b:free",
-            messages=[
-                {"role": "system", "content": SYSTEM_PROMPT},
-                {
-                    "role": "user",
-                    "content": f"Context:\n{context}\n\nQuestion: {req.query}",
-                },
-            ],
-            stream=True,
-            max_tokens=1024,
+        client = genai.Client(api_key=settings.google_api_key)
+        stream = client.models.generate_content_stream(
+            model="gemini-3.1-flash-lite",
+            contents=f"{SYSTEM_PROMPT}\n\nContext:\n{context}\n\nQuestion: {req.query}",
         )
         for chunk in stream:
-            delta = chunk.choices[0].delta.content
-            if delta:
-                yield f"data: {json.dumps({'type': 'token', 'content': delta})}\n\n"
+            if chunk.text:
+                yield f"data: {json.dumps({'type': 'token', 'content': chunk.text})}\n\n"
 
         yield 'data: {"type": "done"}\n\n'
 

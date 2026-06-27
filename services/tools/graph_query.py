@@ -36,7 +36,7 @@ class GraphQueryTool(Tool):
 
     def _generate_cypher(self, question: str) -> str:
         response = self.llm.chat.completions.create(
-            model="openai/gpt-oss-120b:free",
+            model="nvidia/nemotron-3-super-120b-a12b:free",
             messages=[
                 {"role": "system", "content": SYSTEM_PROMPT},
                 {"role": "user", "content": question},

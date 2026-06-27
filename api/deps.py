@@ -49,7 +49,9 @@ def get_graph_query_tool() -> GraphQueryTool:
 
 @lru_cache
 def get_agent_llm_client() -> OpenAI:
-    return OpenAI(api_key=settings.openrouter_api_key, base_url=settings.openrouter_base_url)
+    return OpenAI(
+        api_key=settings.openrouter_api_key, base_url=settings.openrouter_base_url
+    )
 
 
 @lru_cache
@@ -59,4 +61,6 @@ def get_agent() -> ReActAgent:
         ToolName.TEXT_TO_SQL: get_text_to_sql_tool(),
         ToolName.GRAPH_QUERY: get_graph_query_tool(),
     }
-    return ReActAgent(tools, get_agent_llm_client(), model="openai/gpt-oss-120b:free")
+    return ReActAgent(
+        tools, get_agent_llm_client(), model="nvidia/nemotron-3-super-120b-a12b:free"
+    )
